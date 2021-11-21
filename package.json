@@ -1,0 +1,36 @@
+{
+  "name": "github-clone-repo",
+  "version": "1.0.0",
+  "description": "Simple library to clone github repo without using git",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "files": [
+    "index.js",
+    "src",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "test": "cd test && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevSnowflake/github-clone-repo.git"
+  },
+  "keywords": [
+    "github",
+    "clone",
+    "repo"
+  ],
+  "author": "DevAndromeda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DevSnowflake/github-clone-repo/issues"
+  },
+  "homepage": "https://github.com/DevSnowflake/github-clone-repo#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.9"
+  },
+  "dependencies": {
+    "unzipper": "^0.10.11"
+  }
+}
