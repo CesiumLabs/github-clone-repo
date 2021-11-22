@@ -1,5 +1,4 @@
-import { Downloader } from './src/index.js';
-import { Decompress } from './src/index.js';
+import { Downloader, Decompress } from './src/index.js';
 
 export default async function ({ owner, repository, branch, outPath = "./" }) {
     try {
