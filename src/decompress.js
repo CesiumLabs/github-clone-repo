@@ -1,25 +1,24 @@
-const unzipper = require("unzipper");
-const fs = require("node:fs");
-const path = require("node:path");
-
+import { Parse } from 'unzipper';
+import { createWriteStream, mkdirSync } from 'node:fs';
+import { join } from 'node:path';
 /**
  * 
  * @param {import("http").IncomingMessage} incoming 
  * @param {*} parent 
  * @returns 
  */
-module.exports = (incoming, parent = "./") => {
+export function Decompress (incoming, parent = "./") {
     return new Promise((resolve, reject) => {
         incoming.on("error", reject);
-        const out = incoming.pipe(unzipper.Parse());
+        const out = incoming.pipe(Parse());
         out.on("entry", (entry) => {
-            const filePath = path.join(parent, entry.path);
+            const filePath = join(parent, entry.path);
             switch (entry.type) {
                 case "Directory":
-                    fs.mkdirSync(filePath, { recursive: true });
+                    mkdirSync(filePath, { recursive: true });
                     break;
                 case "File":
-                    entry.pipe(fs.createWriteStream(filePath));
+                    entry.pipe(createWriteStream(filePath));
                     break;
             }
         });

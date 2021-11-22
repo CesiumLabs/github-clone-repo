@@ -2,13 +2,12 @@
   "name": "github-clone-repo",
   "version": "1.0.0",
   "description": "Simple library to clone github repo without using git",
-  "main": "index.js",
+  "type":"module",
+  "exports": "./index.js",
   "typings": "index.d.ts",
-  "files": [
-    "index.js",
-    "src",
-    "index.d.ts"
-  ],
+  "engines":{
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
   "scripts": {
     "test": "cd test && node index.js"
   },
