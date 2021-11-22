@@ -1,10 +1,10 @@
-const downloadRepoArchive = require("./src/downloadRepoArchive");
-const decompress = require("./src/decompress");
+import { Downloader } from './src/index.js';
+import { Decompress } from './src/index.js';
 
-module.exports = async ({ owner, repository, branch, outPath = "./" }) => {
+export default async function ({ owner, repository, branch, outPath = "./" }) {
     try {
-        const archive = await downloadRepoArchive(owner, repository, branch);
-        await decompress(archive, outPath);
+        const archive = await Downloader(owner, repository, branch);
+        await Decompress(archive, outPath);
         return true;
     } catch {
         return false;
