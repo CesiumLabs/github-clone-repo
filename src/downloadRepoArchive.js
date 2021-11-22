@@ -1,4 +1,4 @@
-import { get } from "node:https";
+import { get } from 'node:https';
 const url = ({ owner, repo, branch }) => {
     return `https://codeload.github.com/${owner}/${repo}/zip/refs/heads/${branch}`;
 };
