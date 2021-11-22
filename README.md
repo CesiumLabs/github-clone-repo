@@ -11,15 +11,14 @@ $ npm install github-clone-repo
 # Example
 
 ```js
-const clone = require("github-clone-repo");
+import clone from "github-clone-repo";
 
-clone({
+const success = await clone({
     owner: "DevSnowflake",
     repository: "minichat",
     branch: "main",
     outPath: `${__dirname}/output`
-}).then(status => {
-    if (status) console.log("Success!");
-    else console.log("Failed :(");
-});
+})
+
+console.log(success ? "Success!" : "Failed :(");
 ```
