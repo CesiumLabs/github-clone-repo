@@ -17,7 +17,7 @@ const success = await clone({
     owner: "DevSnowflake",
     repository: "minichat",
     branch: "main",
-    outPath: `${__dirname}/output`
+    outPath: "./output"
 })
 
 console.log(success ? "Success!" : "Failed :(");
